@@ -1,0 +1,56 @@
+server:
+  port: 8681
+  servlet:
+    context-path: /ecocity
+
+# LOGGING
+logging:
+  config: classpath:logback-spring.xml
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      stat-view-servlet:
+        login-username: ENC(63aNcafedtq3ppy4zOaz1g==)
+        login-password: ENC(4AuYpekZUqQHJJQzVarEnw==)
+        url-pattern: /druid/*
+        enabled: true
+      driver-class-name: oracle.jdbc.OracleDriver
+      url: ENC(1Qg401U3CRhsN6/usZ0IJ5682zshKchFYGqjr2jrDE9+Y90rgxVkH5EimXt0SdsYnJyHkWyqWgbJ2b3lIt/m3A==)
+      username: ENC(ImgMR1XXEiLlhpoOg7tY4Q==)
+      password: ENC(NPC4frDDBE47kFHjFielhQ==)
+      max-active: 10
+      initial-size: 1
+      max-wait: 6000
+      min-idle: 1
+      # wall防止sql注入，需要特定设置否则会抛出异常
+      filters: stat
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 100
+      validation-query: SELECT 1 FROM dual
+      validation-query-timeout: 5
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      use-global-data-source-stat: true
+      filter:
+        wall:
+          config:
+            multi-statement-allow: true
+
+mybatis:
+  configuration:
+    call-setters-on-nulls: true
+  mapper-locations: classpath:com.liang.mapper/*.xml
+
+jasypt:
+  encryptor:
+    password: EbfYkitulv73I2p0mXI50JMXoaxZTKD4
