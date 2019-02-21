@@ -15,6 +15,7 @@
 *.iws
 *.iml
 *.ipr
+oracle-demo.log
 
 ### NetBeans ###
 /nbproject/private/
