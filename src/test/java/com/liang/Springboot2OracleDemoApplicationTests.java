@@ -27,13 +27,13 @@ public class Springboot2OracleDemoApplicationTests {
         System.out.println(druidAdmin);
         System.out.println(druidPassword);
         System.out.println("--------------------");
-        String system = stringEncryptor.encrypt("system");
+        String system = stringEncryptor.encrypt("admin");
         String oracle = stringEncryptor.encrypt("oracle");
         System.out.println(system);
         System.out.println("--------------------");
         System.out.println(oracle);
         System.out.println("--------------------");
-        String url = stringEncryptor.encrypt("jdbc:oracle:thin:@//10.102.12.115:1521/DATACENTER");
+        String url = stringEncryptor.encrypt("jdbc:oracle:thin:@//192.168.12.11:1521/HELLO");
         System.out.println(url);
     }
 }

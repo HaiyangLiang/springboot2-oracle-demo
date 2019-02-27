@@ -1,6 +1,6 @@
 package com.liang.service;
 
-import com.liang.mapper.EcocityMapper;
+import com.liang.mapper.OracleMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -10,11 +10,11 @@ import javax.annotation.Resource;
  * @date 2019/02/20
  */
 @Service
-public class EcocityService {
+public class OracleService {
     @Resource
-    private EcocityMapper ecocityMapper;
+    private OracleMapper oracleMapper;
 
     public Object ecocityMessage(String sql){
-       return ecocityMapper.ecocityMessage(sql);
+       return oracleMapper.ecocityMessage(sql);
     }
 }

@@ -1,7 +1,7 @@
 package com.liang.controller;
 
 import com.liang.common.ResultModel;
-import com.liang.service.EcocityService;
+import com.liang.service.OracleService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -13,9 +13,9 @@ import java.util.Map;
  * @date 2019/02/20
  */
 @RestController
-public class EcocityController {
+public class OracleController {
     @Resource
-    private EcocityService ecocityService;
+    private OracleService oracleService;
 
     /**
      * @param sql     sql语句
@@ -25,7 +25,7 @@ public class EcocityController {
         Map<String, Object> body = new HashMap<>(1);
         Object result;
         try {
-            result = ecocityService.ecocityMessage(sql);
+            result = oracleService.ecocityMessage(sql);
         }catch (Exception e){
             body.put("msg",e.getLocalizedMessage());
             return ResultModel.failModel(body);

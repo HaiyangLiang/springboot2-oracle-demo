@@ -10,7 +10,7 @@ import java.util.Map;
  * @date 2019/02/21
  */
 @Mapper
-public interface EcocityMapper {
+public interface OracleMapper {
     /**
      * 传入sql查询
      * @param sql sql语句

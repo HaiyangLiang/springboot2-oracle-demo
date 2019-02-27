@@ -12,14 +12,14 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       stat-view-servlet:
-        login-username: ENC(63aNcafedtq3ppy4zOaz1g==)
-        login-password: ENC(4AuYpekZUqQHJJQzVarEnw==)
+        login-username: admin
+        login-password: 123
         url-pattern: /druid/*
         enabled: true
       driver-class-name: oracle.jdbc.OracleDriver
-      url: ENC(1Qg401U3CRhsN6/usZ0IJ5682zshKchFYGqjr2jrDE9+Y90rgxVkH5EimXt0SdsYnJyHkWyqWgbJ2b3lIt/m3A==)
-      username: ENC(ImgMR1XXEiLlhpoOg7tY4Q==)
-      password: ENC(NPC4frDDBE47kFHjFielhQ==)
+      url: jdbc:oracle:thin:@//192.168.12.11:1521/HELLO
+      username: admin
+      password: oracle
       max-active: 10
       initial-size: 1
       max-wait: 6000
